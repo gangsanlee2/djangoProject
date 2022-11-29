@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+import shop.s_users.apps
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,8 +31,12 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
+    'hello.apps.HelloConfig',
+    'users.apps.UsersConfig',
+    'movie.m_users.apps.MUsersConfig',
+    'blog.b_users.apps.BUsersConfig',
+    'shop.s_users.apps.SUsersConfig',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -76,10 +82,10 @@ WSGI_APPLICATION = "admin.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": BASE_DIR / "sandb",
+        "NAME": "sandb",
         "USER": "root",
         "PASSWORD": "root",
-        "HOST": "mysql-container",
+        "HOST": "localhost",
         "PORT": "3306"
     }
 }
