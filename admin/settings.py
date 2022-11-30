@@ -32,11 +32,24 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    'hello.apps.HelloConfig',
     'users.apps.UsersConfig',
     'movie.m_users.apps.MUsersConfig',
+    'movie.movies.apps.MoviesConfig',
+    'movie.cinemas.apps.CinemasConfig',
+    'movie.showtimes.apps.ShowtimesConfig',
+    'movie.theaters.apps.TheatersConfig',
+    'movie.theater_tickets.apps.TheaterTicketsConfig',
     'blog.b_users.apps.BUsersConfig',
+    'blog.posts.apps.PostsConfig',
+    'blog.tags.apps.TagsConfig',
+    'blog.comments.apps.CommentsConfig',
+    'blog.views.apps.ViewsConfig',
     'shop.s_users.apps.SUsersConfig',
+    'shop.deliveries.apps.DeliveriesConfig',
+    'shop.categories.apps.CategoriesConfig',
+    'shop.products.apps.ProductsConfig',
+    'shop.carts.apps.CartsConfig',
+    'shop.orders.apps.OrdersConfig',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -82,7 +95,7 @@ WSGI_APPLICATION = "admin.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "sandb",
+        "NAME": "mydb",
         "USER": "root",
         "PASSWORD": "root",
         "HOST": "localhost",
