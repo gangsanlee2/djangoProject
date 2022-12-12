@@ -1,18 +1,28 @@
+import numpy as np
 import pandas as pd
+from matplotlib import pyplot as plt
+from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OrdinalEncoder
 from imblearn.under_sampling import RandomUnderSampler
-
 from path import STROKE_SAVE_CTX, STROKE_DATA_CTX
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import GridSearchCV
+import seaborn as sns
+from matplotlib import font_manager, rc
+font_path = "C:/Windows/Fonts/malgunbd.ttf"
+font = font_manager.FontProperties(fname=font_path).get_name()
+rc('font', family=font)
 
 STROKE_MENUS = ["Exit", #0
-                "Spec",#1
+                #"Spec",#1
+                "Hook",#1
                 "Rename",#2
                 "Inteval",#3 18세이상만 사용함
                 "Nominal",#4
-                "Target",#5
+                "Set Target",#5
                 "Partition",#6
-                "미완성: Fit",#7
+                "Learning",#7
                 "미완성: Predicate"]#8
 stroke_meta = {
     'id':'아이디', 'gender':'성별', 'age':'나이',
@@ -27,13 +37,14 @@ stroke_meta = {
     'stroke':'뇌졸중'
 }
 stroke_menu = {
-    "1" : lambda t: t.spec(),
+    #"1" : lambda t: t.spec(),
+    "1" : lambda t: t.hook(),
     "2" : lambda t: t.rename_meta(),
     "3" : lambda t: t.interval(),
     "4" : lambda t: t.nominal(),
-    "5" : lambda t: t.target(),
+    "5" : lambda t: t.set_target(),
     "6" : lambda t: t.partition(),
-    "7" : lambda t: print(" ** No Function ** "),
+    "7" : lambda t: t.learning(),
     "8" : lambda t: print(" ** No Function ** "),
     "9" : lambda t: print(" ** No Function ** "),
 
@@ -66,8 +77,21 @@ class StrokeService:
         self.stroke = pd.read_csv(STROKE_DATA_CTX+'healthcare-dataset-stroke-data.csv')
         self.my_stroke = None
         self.adult_stoke = None
-        self.label = None
+        self.target = None
         self.data = None
+        self.X_train = None
+        self.y_train = None
+        self.X_test = None
+        self.y_test = None
+
+    def hook(self):
+        s = StrokeService()
+        s.rename_meta()
+        s.interval()
+        s.nominal()
+        s.set_target()
+        s.partition()
+        s.learning(flag="gini")
     '''
     1.스펙보기
     '''
@@ -141,7 +165,7 @@ class StrokeService:
         self.stroke = t
         self.spec()
         print(" ### 프리프로세스 종료 ### ")
-        self.stroke.to_csv(STROKE_SAVE_CTX+"stroke.csv")
+        self.stroke.to_csv(STROKE_SAVE_CTX+"stroke.csv", index=False)
 
     def ordinal(self): # 해당 컬럼이 없음
         pass
@@ -150,25 +174,76 @@ class StrokeService:
     데이터프레임을 데이터 파티션하기 전에 타깃변수와 입력변수를 
     target 과 data 에 분리하여 저장한다.
     '''
-    def target(self):
+    def set_target(self):
         df = pd.read_csv(STROKE_SAVE_CTX+'stroke.csv')
-        self.data = df.drop(['뇌졸중'], axis=1)
-        self.label = df['뇌졸중']
+        print(f"columns : {df.columns}")
+        self.data = df.drop(['뇌졸중', '아이디'], axis=1) # 오버피팅 방지를 위한 아이디 삭제
+        print(f"columns : {self.data.columns}")
+        self.target = df['뇌졸중']
         print(f'--- data shape --- \n {self.data}')
-        print(f'--- target shape --- \n {self.label}')
+        print(f'--- target shape --- \n {self.target}')
 
     def partition(self):
         data = self.data
-        label = self.label
+        target = self.target
         undersample = RandomUnderSampler(sampling_strategy=0.333, random_state=2)
-        data_under, target_under = undersample.fit_resample(data, label)
+        data_under, target_under = undersample.fit_resample(data, target)
         print(target_under.value_counts(dropna=True))
-        X_train, X_test, y_train, y_test = train_test_split(data_under, target_under,
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(data_under, target_under,
                                                             test_size=0.5, random_state=42, stratify=target_under)
-        print("X_train shape:", X_train.shape)
-        print("X_test shape:", X_test.shape)
-        print("y_train shape:", y_train.shape)
-        print("y_test shape:", y_test.shape)
+
+        print("X_train shape:", self.X_train.shape)
+        print("X_test shape:", self.X_test.shape)
+        print("y_train shape:", self.y_train.shape)
+        print("y_test shape:", self.y_test.shape)
+        '''
+        print(f"X_train : {self.X_train.columns}")
+        print(f"y_train : {self.y_train}")
+        print(f"X_test : {self.X_test.columns}")
+        print(f"y_train : {self.y_test}")
+        '''
+
+    def learning(self, flag):
+        X_train = self.X_train
+        y_train = self.y_train
+        X_test = self.X_test
+        y_test = self.y_test
+        if flag == "ccee":
+            tree = DecisionTreeClassifier(criterion="entropy", random_state=0, max_depth=5)
+            tree.fit(X_train, y_train)
+            print("Accuracy on trining set:{:.5f}".format(tree.score(X_train, y_train)))
+            print("Accuracy on test set:{:.5f}".format(tree.score(X_test, y_test)))
+        elif flag == "gini":
+            tree = DecisionTreeClassifier(criterion="gini", random_state=0, max_depth=5)
+            params = {'criterion': ['gini', 'entropy'], 'max_depth': range(1,21)}
+            # 5회의 교차검증을 2개의 기준마다 20개의 max_depth 값으로 대입 (5 * 2 * 20 )
+            grid_tree = GridSearchCV(
+                tree,
+                param_grid=params,
+                scoring='accuracy',
+                cv=5, # 교차 검증 파라미터 5회 실시
+                n_jobs=-1, # 멀티코어 CPU 모두 사용
+                verbose=1 # 연산중간 메시지 출력
+            )
+            grid_tree.fit(X_train, y_train)
+            tree.fit(X_train, y_train)
+            print("GridSearchCV max accuracy: {:.5f}".format(grid_tree.best_score_))
+            print("GridSearchCV best accuracy: ",(grid_tree.best_params_))
+            best_clf = grid_tree.best_estimator_
+            pred = best_clf.predict(X_test)
+            print("Accuracy on test set: {:.5f}".format(accuracy_score(y_test, pred)))
+            print(f"Feature Impotances: {best_clf.feature_importances_}") # 최적 모델의 변수 중요도
+            feature_names = list(self.data.columns)
+            dft = pd.DataFrame(np.round(best_clf.feature_importances_, 4),
+                               index=feature_names, columns=['Feature_importances'])
+            dft1 = dft.sort_values(by='Feature_importances', ascending=False)
+            print(dft1)
+            ax = sns.barplot(y=dft1.index, x="Feature_importances", data=dft1)
+            for p in ax.patches:
+                ax.annotate("%.3f" % p.get_width(), (p.get_x() + p.get_width(), p.get_y()+1),
+                            xytext=(5,10), textcoords='offset points')
+            plt.show()
+
 
 if __name__ == '__main__':
     def my_menu(ls):
@@ -180,7 +255,9 @@ if __name__ == '__main__':
     if __name__ == '__main__':
         t = StrokeService()
         while True:
+            print("####################################################################################################")
             menu = my_menu(STROKE_MENUS)
+            print("####################################################################################################")
             if menu == '0':
                 print("종료")
                 break
