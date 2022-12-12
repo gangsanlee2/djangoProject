@@ -5,11 +5,13 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OrdinalEncoder
 from imblearn.under_sampling import RandomUnderSampler
-from context import STROKE_SAVE_CTX, STROKE_DATA_CTX
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 import seaborn as sns
 from matplotlib import font_manager, rc
+
+from blog.sickness.context import STROKE_DATA_CTX, STROKE_SAVE_CTX
+
 font_path = "C:/Windows/Fonts/malgunbd.ttf"
 font = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font)

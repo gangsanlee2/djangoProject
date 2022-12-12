@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib import font_manager, rc
 
-from path import TITANIC_DATA_CTX
+from context import TITANIC_DATA_CTX
 from common import Common
 from dataset import Dataset
 from lambdas import Learning

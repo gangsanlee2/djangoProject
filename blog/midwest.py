@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
-from path import MIDWEST_DATA_CTX, MIDWEST_SAVE_CTX
+from context import MIDWEST_DATA_CTX, MIDWEST_SAVE_CTX
 
 
 class Midwest:

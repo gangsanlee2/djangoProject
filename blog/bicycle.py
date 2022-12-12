@@ -1,6 +1,6 @@
 import pandas as pd
 
-from path import BICYCLE_DATA_CTX
+from context import BICYCLE_DATA_CTX
 from dataset import Dataset
 from common import Common
 

@@ -10,7 +10,7 @@ from sklearn import preprocessing
 import folium
 import json
 
-from path import CRIME_DATA_CTX, CRIME_SAVE_CTX
+from context import CRIME_DATA_CTX, CRIME_SAVE_CTX
 
 CRIME_MENUS = ["close", # 0
                "spec", # 1

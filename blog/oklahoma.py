@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import numpy as np
 
-from path import OKLAHOMA_DATA_CTX, OKLAHOMA_SAVE_CTX
+from context import OKLAHOMA_DATA_CTX, OKLAHOMA_SAVE_CTX
 
 OKLAHOMA_MENUS = ["종료",
                   "데이터구조파악",

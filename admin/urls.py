@@ -20,5 +20,6 @@ from admin.views import hello
 urlpatterns = [
     path('', hello),
     path("blog/auth/", include('blog.b_users.urls')),
-    path("movie/movies/", include('movie.movies.urls'))
+    path("movie/movies/", include('movie.movies.urls')),
+    path("blog/sickness/", include('blog.sickness.urls'))
 ]

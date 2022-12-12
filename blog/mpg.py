@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
-from path import MPG_DATA_CTX, MPG_SAVE_CTX
+from context import MPG_DATA_CTX, MPG_SAVE_CTX
 
 MENU = ["종료",
         "mpg 앞부분 확인",
