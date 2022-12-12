@@ -91,14 +91,14 @@ class DcGan(object):
         self.dataloader = None
 
     def hook(self):
-        self.show_images()
+        self.show_face()
         self.weights_init()
         self.print_netG()
         self.print_netD()
         self.generate_fake_faces()
 
 
-    def show_images(self):
+    def show_face(self):
         # manualSeed = random.randint(1, 10000) # use if you want new results
         manualSeed = self.manualSeed
         print("Random Seed: ", manualSeed)
@@ -297,10 +297,7 @@ class DcGan(object):
         plt.imshow(np.transpose(img_list[-1], (1, 2, 0)))
         plt.show()
 
-    def face_blow_up(self):
-        pass
-
-    def face_blow_up(self):
+    def myDLib(self):
         dl = MyDLib()
         dl.hook()
 
@@ -485,8 +482,8 @@ MENUS = ["close",  # 0
          "/movie/movies/fake-data",  # 1. Loading CelebA Dataset
          "/movie/movies/face-blow-up",  # 2 Blow Up Face By DLib
          ]
-gan_menu = {"1": lambda t: t.hook(),
-            "2":  lambda t: t.face_blow_up(),
+gan_menu = {"1": lambda x: x.hook(),
+            "2":  lambda x: x.myDLib(),
             }
 
 if __name__ == '__main__':
@@ -496,14 +493,14 @@ if __name__ == '__main__':
         return input('메뉴선택: ')
 
     if __name__ == '__main__':
-        t = DcGan()
+        dc = DcGan()
         while True:
             menu = my_menu(MENUS)
             if menu == '0':
                 print("종료")
                 break
             else:
-                gan_menu[menu](t)
+                gan_menu[menu](dc)
 '''
                 try:
                     gan_menu[menu](t)

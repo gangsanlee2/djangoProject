@@ -42,3 +42,5 @@ django-cors-headers
 torchvision
 matplotlib
 IPython
+scikit-learn
+imblearn
