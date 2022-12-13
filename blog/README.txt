@@ -12,7 +12,7 @@ target = 계수 * feature-value + 편향
 특성변수 = 독립변수 = 외생변수 = x변수
 목적변수 = 종속변수 = 내생변수 = y변수
 feature 의 변환은 표준화(Z-score 정규화)와 정규화가 있다.
-아웃라이어(이상치)가 있으면 표준화 나머지는 정규화가 낫다.
+아웃라이어(이상치)가 있으면 표준화, 나머지는 정규화가 낫다.
 
 - 계수(係數, coefficient)는 '인자(因子)'라는 뜻으로 쓰인다.
 - 보통 식 앞에 곱해지는 상수를 말한다.
@@ -74,6 +74,43 @@ https://opentutorials.org/module/3653/22071
 특정 통계 모델의 적합성을 확인하는데 주로 이용됩니다.
 ## 손실함수 혹은 비용함수(cost function)는 같은 용어로 통계학, 경제학 등에서 널리 쓰이는 함수로
     머신러닝에서도 손실함수는 예측값과 실제값에 대한 오차를 줄이는 데 사용된다.
-## MSE vs. CCEE
+## 평균제곱오차 MSE Mean Squared Error vs. 범주형 교차 엔트로피 오차 CCEE Categorical Cross Entropy Error
+여기서 오차는 편향과 관련. 분산은 내부적으로 알아서 조정, 개발자가 신경 쓸 부분은 편향
 회귀ML 의 손실함수는 MSE 이다
 분류ML 의 손실함수는 CCEE 이다. 활성화함수로 Softmax 를 사용한다.
+
+## 데이터셋
+https://for-my-wealthy-life.tistory.com/19
+여태까지 공부를 할 때는 train set과 test set 두개로만 데이터를 나누었다.
+다만 이렇게 train, test 두개로만 분리하는 것은 기초적인 수준이고,
+보통 현업에서 모델을 만들 때는 train, test, validation set 세개로 나눈다.
+
+validation dataset is a sample of data held back from training your model that is used to give an estimate of model skill while tuning model’s hyperparameters.
+The validation dataset is different from the test dataset that is also held back from the training of the model, but is instead used to give an unbiased estimate of the skill of the final tuned model when comparing or selecting between final models.
+There is much confusion in applied machine learning about what a validation dataset is exactly and how it differs from a test dataset.
+
+##  기계학습의 관점에서 보았을때 Ground-truth는 학습하고자 하는 데이터의 원본 혹은 실제 값을 표현할때 사용됩니다
+https://eair.tistory.com/16
+
+## DecisionTree Learning 에서 불순도를 계산하는 3가지 방법
+https://m.blog.naver.com/samsjang/220978650404
+지니 인덱스
+엔트로피
+분류오류
+
+## 불순도란 다양한 범주들의 개체들이 얼마나 포함되었는가 정도이다.
+여러가지 클래스가 섞여있는 정도이다. 반대로 순수도(purity)는 같은 클래스끼리
+얼마나 많이 포함되어 있는지를 말한다.
+https://computer-science-student.tistory.com/60
+
+## criterion 은 표준이다. 동의어로는
+standard, normal, norm, average, level 이 있다.
+
+## 엔트로피(영어: entropy, 독일어: entropie):https://ko.wikipedia.org/wiki/%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC
+열역학적 계의 유용하지 않은 (일로 변환할 수 없는) 에너지의 흐름을 설명할 때 이용되는 상태 함수다.
+통계역학적으로, 주어진 거시적 상태에 대응하는 미시적 상태의 수의 로그로 생각할 수 있다.
+엔트로피는 일반적으로 보존되지 않고, 열역학 제2법칙에 따라 시간에 따라 증가한다.
+독일의 물리학자 루돌프 클라우지우스가 1850년대 초에 도입하였다.
+대개 기호로 라틴 대문자 S를 쓴다.
+
+## 산술급수 와 기하급수

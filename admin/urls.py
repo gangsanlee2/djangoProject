@@ -21,5 +21,6 @@ urlpatterns = [
     path('', hello),
     path("blog/auth/", include('blog.b_users.urls')),
     path("movie/movies/", include('movie.movies.urls')),
-    path("blog/sickness/", include('blog.sickness.urls'))
+    path("blog/sickness/", include('blog.sickness.urls')),
+    path("shop/flower/", include('shop.flower.urls')),
 ]
