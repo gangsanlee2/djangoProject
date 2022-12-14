@@ -18,10 +18,11 @@ def iris(request):
     print(f'꽃잎 너비 : {PetalLengthCm}cm')
     print(f'꽃잎 너비 : {PetalWidthCm}cm')
     result = IrisService().service_model([SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm])
+    print(f'result type : {type(result)}')
     if result == 0:
-        print('찾는 품종: setosa / 부채붓꽃')
+        resp = 'setosa / 부채붓꽃'
     elif result == 1:
-        print('찾는 품종: versicolor / 버시칼라 ')
+        resp = 'versicolor / 버시칼라'
     elif result == 2:
-        print('찾는 품종: virginica / 버지니카')
-    return JsonResponse({'result':{result}})
+        resp = 'virginica / 버지니카'
+    return JsonResponse({'result': resp})
