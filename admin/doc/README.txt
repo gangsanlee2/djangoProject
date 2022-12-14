@@ -6,7 +6,7 @@ ML = 통계 + DL
 경험적 통계 = 사후,  통계적 확률, 식 * "큰수의 법칙" -> 귀납법
 기대값 = 계수 * 변수 + 상수
 ## 변수는 feature 와 target 으로 나뉜다.
-## 상수는 계수와 편향로 나뉜다.
+## 상수는 계수와 편향bias로 나뉜다.
 ## 따라서 다음과 같은 식의 구조를 같는다.
 target = 계수 * feature-value + 편향
 특성변수 = 독립변수 = 외생변수 = x변수
@@ -26,7 +26,7 @@ continuous = 연속형 = interval + ratio = 실수형
 
 # 데이터 분석에는 크게 두 가지의 접근방법
 1) 확증적 데이터 분석(CDA: Confirmatory Data Analysis) = 추론통계 = 가설 -> ... -> 특정 사례 예측 = 연역
-2) 탐색적 데이터 분석(EDA: Exploratory Data Analysis) = 기술통계  = 데이터 수집 -> ... -> 모델 = 귀납
+2) 탐색적 데이터 분석(EDA: Exploratory Data Analysis) = 기술통계 = 데이터 수집 -> ... -> 모델 = 귀납
 인공지능은 EDA 채택
 하지만 결국 모델이 가설을 세우고 추론을 하기 때문에 결국 둘 다 쓰는 셈이다.
 
@@ -41,7 +41,7 @@ continuous = 연속형 = interval + ratio = 실수형
 ## 지도학습은 샘플을 사용한다.
 ## 비지도학습은 샘플을 사용하지 않는다.
 
-지도학습 분류 classification / 회귀 regress 로 나뉜다.
+지도학습 분류 classification / 회귀 regression 로 나뉜다.
 model 은 var 를 잡아내서, class 를 시도한다.
 
 ## (확률)분포는 함수다
@@ -58,7 +58,6 @@ model 은 var 를 잡아내서, class 를 시도한다.
 ## 인코딩(encoding)
 문자 -> 숫자
 
-
 # 편향과 편차
 https://opentutorials.org/module/3653/22071
 정답 하나를 맞추기 위해 컴퓨터는 여러 번의 예측값 내놓기를 시도하는데,
@@ -74,12 +73,13 @@ https://opentutorials.org/module/3653/22071
 ## 추정에 있어 통계학의 손실함수에는 평균제곱오차 또는 음의 로그 우도함수가 있으며
    머신러닝에서도 동일한 손실함수를 사용한다.
 ## 우도함수: 우도 함수(가능도 함수로 번역되기도 하고, 영어로는 likelihood function 이라 합니다)
-는 실현된 데이터(혹은 관찰된 데이터 observed data)로 부터
-특정 통계 모델의 적합성을 확인하는데 주로 이용됩니다.
+    는 실현된 데이터(혹은 관찰된 데이터 observed data)로 부터
+    특정 통계 모델의 적합성을 확인하는데 주로 이용됩니다.
 ## 손실함수 혹은 비용함수(cost function)는 같은 용어로 통계학, 경제학 등에서 널리 쓰이는 함수로
-    머신러닝에서도 손실함수는 예측값과 실제값에 대한 오차를 줄이는 데 사용된다.
+    머신러닝에서도 손실함수는 예측값과 실제값에 대한 오차(편향)를 줄이는 데 사용된다.
+
 ## 평균제곱오차 MSE Mean Squared Error vs. 범주형 교차 엔트로피 오차 CCEE Categorical Cross Entropy Error
-여기서 오차는 편향과 관련. 분산은 내부적으로 알아서 조정, 개발자가 신경 쓸 부분은 편향
+    여기서 오차는 편향과 관련. 분산은 내부적으로 알아서 조정, 개발자가 조정할 부분은 편향
 회귀ML 의 손실함수는 MSE 이다
 분류ML 의 손실함수는 CCEE 이다. 활성화함수로 Softmax 를 사용한다.
 
@@ -90,11 +90,13 @@ https://for-my-wealthy-life.tistory.com/19
 보통 현업에서 모델을 만들 때는 train, test, validation set 세개로 나눈다.
 
 validation dataset is a sample of data held back from training your model that is used to give an estimate of model skill while tuning model’s hyperparameters.
-The validation dataset is different from the test dataset that is also held back from the training of the model, but is instead used to give an unbiased estimate of the skill of the final tuned model when comparing or selecting between final models.
+The validation dataset is different from the test dataset that is also held back from the training of the model,
+but is instead used to give an unbiased estimate of the skill of the final tuned model when comparing or selecting between final models.
 There is much confusion in applied machine learning about what a validation dataset is exactly and how it differs from a test dataset.
 
 ##  기계학습의 관점에서 보았을때 Ground-truth는 학습하고자 하는 데이터의 원본 혹은 실제 값을 표현할때 사용됩니다
 https://eair.tistory.com/16
+실제값 y <-> 기대값 y-hat
 
 ## DecisionTree Learning 에서 불순도를 계산하는 3가지 방법
 https://m.blog.naver.com/samsjang/220978650404
@@ -119,3 +121,25 @@ standard, normal, norm, average, level 이 있다.
 
 ## 산술급수 와 기하급수
 
+
+##
+fit_transform()은 train dataset에서만 사용됩니다
+transform()은 test data에 적용하기 위해 를 사용한다.
+
+## 행렬 연산(Matrix Operations)
+
+ 행렬 표기법 - Matrix Notation
+
+ 행렬 덧셈 - Matrix Sum
+ 스칼라 곱 - Scalar Multiple
+ 행렬 곱 - Matrix Multiplication
+ 행렬의 전치 - The transpose of a matrix
+
+## 선형회귀
+diff: 로지스틱회귀
+
+## 가설(hypothesis)
+p-value (확률값)
+
+기술통계 - 추론통계
+추론 = 학습(Learning)

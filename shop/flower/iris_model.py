@@ -11,18 +11,23 @@ Classify iris plants into three species in this classic dataset
 '''
 class IrisModel(object):
     def __init__(self):
+        global iris, _X, _Y
         # self.iris = pd.read_csv(r'C:\Users\bitcamp\PycharmProjects\djangoProject\shop\flower\data\Iris.csv')
-        self.iris = datasets.load_iris()
-        print(f'tpye {type(self.iris)}')    # tpye <class 'sklearn.utils.Bunch'>
-        self._X = self.iris.data
-        self._Y = self.iris.target
+        iris = datasets.load_iris()
+        print(f'tpye {type(iris)}')    # tpye <class 'sklearn.utils.Bunch'>
+        _X = iris.data
+        _Y = iris.target
 
     def hook(self):
         self.create_model()
 
     def spec(self):
-        print(self.iris)
-        print(f'{self.iris.feature_names}')
+        print(" --- 1.Features ---")
+        print(iris['feature_names'])
+        print(" --- 2.target ---")
+        print(iris['target'])
+        print(" --- 3.print ---")
+        print(iris)
         '''
         iris = self.iris
         print(" --- 1.Shape ---")
@@ -41,13 +46,15 @@ class IrisModel(object):
         print(iris.describe(include='all'))
         '''
         '''
+        in CSV file
         (150, 6)
         ['Id', 'SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm', 'Species']
         '''
 
+
     def create_model(self):
-        X = self._X
-        Y = self._Y
+        X = _X
+        Y = _Y
         enc = OneHotEncoder()
         Y_1hot = enc.fit_transform(Y.reshape(-1,1)).toarray()
         model = Sequential()

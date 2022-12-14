@@ -1,10 +1,12 @@
+import numpy as np
 import pandas as pd
 import tensorflow as tf
 from keras.layers import Dense
-from keras.models import load_model
 from sklearn import datasets
 from sklearn.preprocessing import OneHotEncoder
+from tensorflow import keras
 from tensorflow.python.keras import Sequential
+from tensorflow.python.keras.models import load_model
 
 '''
 Iris Species
@@ -14,21 +16,22 @@ Classify iris plants into three species in this classic dataset
 
 class IrisService(object):
     def __init__(self):
+        global model, graph, target_names
         model = load_model(r'C:\Users\bitcamp\PycharmProjects\djangoProject\shop\flower\save\iris_model.h5')
-        graph = tf.get_default_graph()
         target_names = datasets.load_iris().target_names
 
-    def hook(self):
-        self.service_model()
+    def service_model(self, features):
+        features = np.reshape(features, (1,4))
+        Y_prob = model.predict(features)
+        predicted = Y_prob.argmax(axis=-1)
+        return predicted[0]
 
-    def service_model(self):
-        pass
 
 MENUS = ["Exit",  # 0
-         "Hook",  # 1
+         "service_model",  # 1
          ]
 menu = {
-    "1": lambda x: x.hook(),
+    "1": lambda x: x.service_model(),
 }
 if __name__ == '__main__':
     def my_menu(ls):
