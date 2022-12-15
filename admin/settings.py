@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "blog",
     "movie",
     "shop",
+    "dlearn",
     "rest_framework"
 ]
 

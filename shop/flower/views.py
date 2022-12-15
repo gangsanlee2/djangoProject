@@ -8,15 +8,19 @@ import tensorflow as tf
 @parser_classes([JSONParser])
 def iris(request):
     iris_info = request.data
+
+    # 텐서플로에 인식할 수 있도록 한다.
     SepalLengthCm = tf.constant(float(iris_info['SepalLengthCm']))
     SepalWidthCm = tf.constant(float(iris_info['SepalWidthCm']))
     PetalLengthCm = tf.constant(float(iris_info['PetalLengthCm']))
     PetalWidthCm = tf.constant(float(iris_info['PetalWidthCm']))
-    print(f'리액트에서 보낸 데이터 : {iris_info}cm')
+
+    print(f'리액트에서 보낸 데이터 : {iris_info}')
     print(f'꽃받침 길이 : {SepalLengthCm}cm')
     print(f'꽃받침 너비 : {SepalWidthCm}cm')
     print(f'꽃잎 너비 : {PetalLengthCm}cm')
     print(f'꽃잎 너비 : {PetalWidthCm}cm')
+
     result = IrisService().service_model([SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm])
     print(f'result type : {type(result)}')
     if result == 0:
