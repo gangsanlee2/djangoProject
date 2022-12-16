@@ -9,7 +9,6 @@ from keras.layers import Dense
 from sklearn import datasets
 from sklearn.preprocessing import OneHotEncoder
 
-
 class FashionModel(object):
 
     def create_model(self):

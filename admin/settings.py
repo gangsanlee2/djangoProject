@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "movie",
     "shop",
     "dlearn",
-    "rest_framework"
+    "rest_framework",
 ]
 
 CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000',
