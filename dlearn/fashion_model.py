@@ -10,14 +10,17 @@ from sklearn import datasets
 from sklearn.preprocessing import OneHotEncoder
 
 class FashionModel(object):
-
+    global model
+    model = None
     def create_model(self):
         (train_images, train_labels), (test_images, test_labels) = keras.datasets.fashion_mnist.load_data()
+        '''
         plt.figure()
         plt.imshow(train_images[10])
         plt.colorbar()
         plt.grid(False)
         plt.show()
+        '''
         model = Sequential([
             keras.layers.Flatten(input_shape=(28,28)),
             keras.layers.Dense(128, activation='relu'),

@@ -24,4 +24,5 @@ urlpatterns = [
     path("blog/sickness/", include('blog.sickness.urls')),
     path("shop/flower/", include('shop.flower.urls')),
     path("dlearn/", include('dlearn.urls')),
+    path("webcrawler/", include('webcrawler.urls')),
 ]

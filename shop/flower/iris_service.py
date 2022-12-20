@@ -29,7 +29,6 @@ class IrisService(object):
         print(f'predicted type : {type(predicted)}')
         return predicted[0]
 
-
 MENUS = ["Exit",  # 0
          "service_model",  # 1
          ]
