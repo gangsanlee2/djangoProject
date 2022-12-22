@@ -57,7 +57,9 @@ class ScrapService(ScrapVO):
     def naver_movie_review(self):
         if os.path.isfile(savepath):
             df = pd.read_csv(savepath)
-            return df.columns[0]
+            ls = []
+            [ls.append({'rank': i+1, 'title': df.columns[i]}) for i in range(len(df.columns))]
+            return ls
         else:
             driver = webdriver.Chrome(driverpath)
             driver.get(naver_url)
@@ -68,7 +70,7 @@ class ScrapService(ScrapVO):
                 wr = csv.writer(f)
                 wr.writerows(products)
             driver.close()
-            return products[0][0]
+            return products[0]
 
 if __name__ == '__main__':
     s = ScrapService()
