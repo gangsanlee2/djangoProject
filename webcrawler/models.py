@@ -6,6 +6,10 @@ from urllib.request import urlopen
 import pandas as pd
 from bs4 import BeautifulSoup
 
+from webcrawler.common import Common
+from webcrawler.scrapper import BugsMusic, MelonMusic, Scrap
+
+
 @dataclass
 class ScrapVO:
     html = ''

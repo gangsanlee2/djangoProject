@@ -12,6 +12,14 @@ class UserService(object):
     def __init__(self):
         pass
 
+    def insert_users(self):
+        ls = self.create_users()
+        df = self.change_to_df_users(ls)
+        df.to_sql()
+
+    def change_to_df_users(self):
+        pass
+
     #b_user_id, email, nickname, password
     def create_users(self):
         f = Faker()
@@ -41,5 +49,10 @@ class UserService(object):
         df_read = pd.read_sql_table('b_users', con=conn)
         print(df_read)
         '''
+
+    def get_users(self) -> []:
+        pass
+
+
 if __name__ == '__main__':
     UserService().create_users()

@@ -19,5 +19,4 @@ def login(request):
 @api_view(['GET'])
 @parser_classes([JSONParser])
 def signup(request):
-    #UserService().create_users()
-    return JsonResponse({'회원가입 결과': '성공!!'})
+    return JsonResponse({'users': UserService().get_users()})
