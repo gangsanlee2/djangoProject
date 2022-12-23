@@ -1,10 +1,9 @@
 <div align="center">
   <p>
     <a align="center" href="https://ultralytics.com/yolov5" target="_blank">
-      <img width="850" src="https://raw.githubusercontent.com/ultralytics/assets/master/yolov5/v70/splash.png"></a>
+      <img width="850" src="https://raw.githubusercontent.com/ultralytics/assets/master/yolov5/v70/splash.png" alt=""></a>
   </p>
 
-  [English](README.md) | [简体中文](README.zh-CN.md)
   <br>
   <div>
     <a href="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
@@ -53,14 +52,14 @@ To request an Enterprise License please complete the form at <a href="https://ul
 [Ultralytics Live Session Ep. 2](https://youtu.be/QGRtEG7UjtE) ✨ will be streaming live on **Tuesday, December 13th at 19:00 CET** with [Joseph Nelson](https://github.com/josephofiowa) of [Roboflow](https://roboflow.com/?ref=ultralytics) who will join us to discuss the brand new Roboflow x Ultralytics HUB integration. Tune in to ask Glenn and Joseph about how you can make speed up workflows with seamless dataset integration! 🔥
 
 <a align="center" href="https://youtu.be/QGRtEG7UjtE" target="_blank">
-<img width="800" src="https://user-images.githubusercontent.com/85292283/205996456-bf3efa33-9c46-455e-b322-a64886cc7a0b.png"></a>
+<img width="800" src="https://user-images.githubusercontent.com/85292283/205996456-bf3efa33-9c46-455e-b322-a64886cc7a0b.png" alt=""></a>
 </div>
 
 ## <div align="center">Segmentation ⭐ NEW</div>
 
 <div align="center">
 <a align="center" href="https://ultralytics.com/yolov5" target="_blank">
-<img width="800" src="https://user-images.githubusercontent.com/61612323/204180385-84f3aca9-a5e9-43d8-a617-dda7ca12e54a.png"></a>
+<img width="800" src="https://user-images.githubusercontent.com/61612323/204180385-84f3aca9-a5e9-43d8-a617-dda7ca12e54a.png" alt=""></a>
 </div>
 
 Our new YOLOv5 [release v7.0](https://github.com/ultralytics/yolov5/releases/v7.0) instance segmentation models are the fastest and most accurate in the world, beating all current [SOTA benchmarks](https://paperswithcode.com/sota/real-time-instance-segmentation-on-mscoco). We've made them super simple to train, validate and deploy. See full details in our [Release Notes](https://github.com/ultralytics/yolov5/releases/v7.0) and visit our [YOLOv5 Segmentation Colab Notebook](https://github.com/ultralytics/yolov5/blob/master/segment/tutorial.ipynb) for quickstart tutorials.
@@ -207,11 +206,11 @@ python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  -
                                                                  yolov5x                    16
 ```
 
-<img width="800" src="https://user-images.githubusercontent.com/26833433/90222759-949d8800-ddc1-11ea-9fa1-1c97eed2b963.png">
+<img width="800" src="https://user-images.githubusercontent.com/26833433/90222759-949d8800-ddc1-11ea-9fa1-1c97eed2b963.png" alt=""/>
 
 </details>
 
-<details open>
+<details>
 <summary>Tutorials</summary>
 
 - [Train Custom Data](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data)  🚀 RECOMMENDED
@@ -237,29 +236,29 @@ python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  -
 
 ## <div align="center">Integrations</div>
 
-<br>
+<br/>
 <a align="center" href="https://bit.ly/ultralytics_hub" target="_blank">
-<img width="100%" src="https://github.com/ultralytics/assets/raw/master/im/integrations-loop.png"></a>
-<br>
-<br>
+<img width="100%" src="https://github.com/ultralytics/assets/raw/master/im/integrations-loop.png" alt=""/></a>
+<br/>
+<br/>
 
 <div align="center">
   <a href="https://roboflow.com/?ref=ultralytics">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-roboflow.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-roboflow.png" width="10%"  alt=""/></a>
   <img src="https://github.com/ultralytics/assets/raw/master/social/logo-transparent.png" width="15%" height="0" alt="" />
   <a href="https://cutt.ly/yolov5-readme-clearml">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-clearml.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-clearml.png" width="10%"  alt=""/></a>
   <img src="https://github.com/ultralytics/assets/raw/master/social/logo-transparent.png" width="15%" height="0" alt="" />
   <a href="https://bit.ly/yolov5-readme-comet">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-comet.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-comet.png" width="10%"  alt=""/></a>
   <img src="https://github.com/ultralytics/assets/raw/master/social/logo-transparent.png" width="15%" height="0" alt="" />
   <a href="https://bit.ly/yolov5-deci-platform">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-deci.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-deci.png" width="10%"  alt=""/></a>
 </div>
 
 |Roboflow|ClearML ⭐ NEW|Comet ⭐ NEW|Deci ⭐ NEW|
 |:-:|:-:|:-:|:-:|
-|Label and export your custom datasets directly to YOLOv5 for training with [Roboflow](https://roboflow.com/?ref=ultralytics)|Automatically track, visualize and even remotely train YOLOv5 using [ClearML](https://cutt.ly/yolov5-readme-clearml) (open-source!)|Free forever, [Comet](https://bit.ly/yolov5-readme-comet2) lets you save YOLOv5 models, resume training, and interactively visualise and debug predictions|Automatically compile and quantize YOLOv5 for better inference performance in one click at [Deci](https://bit.ly/yolov5-deci-platform)|
+|Label and export your custom datasets directly to YOLOv5 for training with [Roboflow](https://roboflow.com/?ref=ultralytics)|Automatically track, visualize and even remotely train YOLOv5 using [ClearML](https://cutt.ly/yolov5-readme-clearml) (open-source!)|Free forever, [Comet](https://bit.ly/yolov5-readme-comet2) lets you save YOLOv5 models, resume training, and interactively visualize and debug predictions|Automatically compile and quantize YOLOv5 for better inference performance in one click at [Deci](https://bit.ly/yolov5-deci-platform)|
 
 
 ## <div align="center">Ultralytics HUB</div>
@@ -267,24 +266,24 @@ python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  -
 [Ultralytics HUB](https://bit.ly/ultralytics_hub) is our ⭐ **NEW** no-code solution to visualize datasets, train YOLOv5 🚀 models, and deploy to the real world in a seamless experience. Get started for **Free** now!
 
 <a align="center" href="https://bit.ly/ultralytics_hub" target="_blank">
-<img width="100%" src="https://github.com/ultralytics/assets/raw/master/im/ultralytics-hub.png"></a>
+<img width="100%" src="https://github.com/ultralytics/assets/raw/master/im/ultralytics-hub.png" alt=""/></a>
 
 
 ## <div align="center">Why YOLOv5</div>
 
 YOLOv5 has been designed to be super easy to get started and simple to learn. We prioritize real-world results.
 
-<p align="left"><img width="800" src="https://user-images.githubusercontent.com/26833433/155040763-93c22a27-347c-4e3c-847a-8094621d3f4e.png"></p>
+<p align="left"><img width="800" src="https://user-images.githubusercontent.com/26833433/155040763-93c22a27-347c-4e3c-847a-8094621d3f4e.png" alt=""/></p>
 <details>
   <summary>YOLOv5-P5 640 Figure</summary>
 
-<p align="left"><img width="800" src="https://user-images.githubusercontent.com/26833433/155040757-ce0934a3-06a6-43dc-a979-2edbbd69ea0e.png"></p>
+<p align="left"><img width="800" src="https://user-images.githubusercontent.com/26833433/155040757-ce0934a3-06a6-43dc-a979-2edbbd69ea0e.png" alt=""/></p>
 </details>
 <details>
   <summary>Figure Notes</summary>
 
 - **COCO AP val** denotes mAP@0.5:0.95 metric measured on the 5000-image [COCO val2017](http://cocodataset.org) dataset over various inference sizes from 256 to 1536.
-- **GPU Speed** measures average inference time per image on [COCO val2017](http://cocodataset.org) dataset using a [AWS p3.2xlarge](https://aws.amazon.com/ec2/instance-types/p3/) V100 instance at batch-size 32.
+- **GPU Speed** measures average inference time per image on [COCO val2017](http://cocodataset.org) dataset using [AWS p3.2xlarge](https://aws.amazon.com/ec2/instance-types/p3/) V100 instance at batch-size 32.
 - **EfficientDet** data from [google/automl](https://github.com/google/automl) at batch size 8.
 - **Reproduce** by `python val.py --task study --data coco.yaml --iou 0.7 --weights yolov5n6.pt yolov5s6.pt yolov5m6.pt yolov5l6.pt yolov5x6.pt`
 
@@ -311,7 +310,7 @@ YOLOv5 has been designed to be super easy to get started and simple to learn. We
 
 - All checkpoints are trained to 300 epochs with default settings. Nano and Small models use [hyp.scratch-low.yaml](https://github.com/ultralytics/yolov5/blob/master/data/hyps/hyp.scratch-low.yaml) hyps, all others use [hyp.scratch-high.yaml](https://github.com/ultralytics/yolov5/blob/master/data/hyps/hyp.scratch-high.yaml).
 - **mAP<sup>val</sup>** values are for single-model single-scale on [COCO val2017](http://cocodataset.org) dataset.<br>Reproduce by `python val.py --data coco.yaml --img 640 --conf 0.001 --iou 0.65`
-- **Speed** averaged over COCO val images using a [AWS p3.2xlarge](https://aws.amazon.com/ec2/instance-types/p3/) instance. NMS times (~1 ms/img) not included.<br>Reproduce by `python val.py --data coco.yaml --img 640 --task speed --batch 1`
+- **Speed** averaged over COCO val images using [AWS p3.2xlarge](https://aws.amazon.com/ec2/instance-types/p3/) instance. NMS times (~1 ms/img) not included.<br>Reproduce by `python val.py --data coco.yaml --img 640 --task speed --batch 1`
 - **TTA** [Test Time Augmentation](https://github.com/ultralytics/yolov5/issues/303) includes reflection and scale augmentations.<br>Reproduce by `python val.py --data coco.yaml --img 1536 --iou 0.7 --augment`
 
 </details>
@@ -324,7 +323,7 @@ YOLOv5 [release v6.2](https://github.com/ultralytics/yolov5/releases) brings sup
 <details>
   <summary>Classification Checkpoints</summary>
 
-<br>
+<br/>
 
 We trained YOLOv5-cls classification models on ImageNet for 90 epochs using a 4xA100 instance, and we trained ResNet and EfficientNet models alongside with the same default training settings to compare. We exported all models to ONNX FP32 for CPU speed tests and to TensorRT FP16 for GPU speed tests. We ran all speed tests on Google [Colab Pro](https://colab.research.google.com/signup) for easy reproducibility.
 
@@ -357,7 +356,8 @@ We trained YOLOv5-cls classification models on ImageNet for 90 epochs using a 4x
 </details>
 
 <details>
-  <summary>Classification Usage Examples &nbsp;<a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/classify/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></summary>
+  <summary>Classification Usage Examples &nbsp;<a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/classify/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></summary>
+
 
 ### Train
 YOLOv5 classification training supports auto-download of MNIST, Fashion-MNIST, CIFAR10, CIFAR100, Imagenette, Imagewoof, and ImageNet datasets with the `--data` argument. To start training on MNIST for example use `--data mnist`.
@@ -396,35 +396,35 @@ Get started in seconds with our verified environments. Click each icon below for
 
 <div align="center">
   <a href="https://bit.ly/yolov5-paperspace-notebook">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-gradient.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-gradient.png" width="10%"  alt=""/></a>
   <img src="https://github.com/ultralytics/assets/raw/master/social/logo-transparent.png" width="5%" alt="" />
   <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-colab-small.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-colab-small.png" width="10%"  alt=""/></a>
   <img src="https://github.com/ultralytics/assets/raw/master/social/logo-transparent.png" width="5%" alt="" />
   <a href="https://www.kaggle.com/ultralytics/yolov5">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-kaggle-small.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-kaggle-small.png" width="10%"  alt=""/></a>
   <img src="https://github.com/ultralytics/assets/raw/master/social/logo-transparent.png" width="5%" alt="" />
   <a href="https://hub.docker.com/r/ultralytics/yolov5">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-docker-small.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-docker-small.png" width="10%"  alt=""/></a>
   <img src="https://github.com/ultralytics/assets/raw/master/social/logo-transparent.png" width="5%" alt="" />
   <a href="https://github.com/ultralytics/yolov5/wiki/AWS-Quickstart">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-aws-small.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-aws-small.png" width="10%"  alt=""/></a>
   <img src="https://github.com/ultralytics/assets/raw/master/social/logo-transparent.png" width="5%" alt="" />
   <a href="https://github.com/ultralytics/yolov5/wiki/GCP-Quickstart">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-gcp-small.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-gcp-small.png" width="10%"  alt=""/></a>
 </div>
 
 ## <div align="center">App</div>
 
 Run YOLOv5 models on your iOS or Android device by downloading the [Ultralytics App](https://ultralytics.com/app_install)!
 
-<a align="center" href="https://ultralytics.com/app_install" target="_blank">
-<img width="100%" alt="Ultralytics mobile app" src="https://user-images.githubusercontent.com/26833433/202829285-39367043-292a-41eb-bb76-c3e74f38e38e.png">
+<a align="center" href="https://ultralytics.com/app_install" target="_blank"><a/>
+<img width="100%" alt="Ultralytics mobile app" src="https://user-images.githubusercontent.com/26833433/202829285-39367043-292a-41eb-bb76-c3e74f38e38e.png"/>
 
 
 ## <div align="center">Contribute</div>
 
-We love your input! We want to make contributing to YOLOv5 as easy and transparent as possible. Please see our [Contributing Guide](CONTRIBUTING.md) to get started, and fill out the [YOLOv5 Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey) to send us feedback on your experiences. Thank you to all our contributors!
+We love your input! We want to make contributing to YOLOv5 as easy and transparent as possible. Please see our Contributing Guide(CONTRIBUTING.md) to get started, and fill out the [YOLOv5 Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey) to send us feedback on your experiences. Thank you to all our contributors!
 
 <!-- SVG image from https://opencollective.com/ultralytics/contributors.svg?width=990 -->
 <a href="https://github.com/ultralytics/yolov5/graphs/contributors"><img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/image-contributors-1280.png" /></a>
@@ -442,7 +442,7 @@ YOLOv5 is available under two different licenses:
 
 For YOLOv5 bugs and feature requests please visit [GitHub Issues](https://github.com/ultralytics/yolov5/issues). For professional support please [Contact Us](https://ultralytics.com/contact).
 
-<br>
+<br/>
 <div align="center">
   <a href="https://github.com/ultralytics" style="text-decoration:none;">
     <img src="https://github.com/ultralytics/assets/raw/master/social/logo-social-github.png" width="3%" alt="" /></a>

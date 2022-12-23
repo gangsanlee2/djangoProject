@@ -25,5 +25,5 @@ urlpatterns = [
     path("shop/flower/", include('shop.flower.urls')),
     path("dlearn/", include('dlearn.urls')),
     path("webcrawler/", include('webcrawler.urls')),
-    path("nlp/", include('nlp.samsung_report.urls')),
+    path("nlp/", include('nlp.urls')),
 ]
