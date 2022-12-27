@@ -1,7 +1,8 @@
+from konlpy.tag import Okt
+
 from nlp.samsung_report.models import Entity
 import nltk
 from nltk.tokenize import word_tokenize
-from konlpy.tag import Okt
 import pandas as pd
 from nltk import FreqDist
 from wordcloud import WordCloud

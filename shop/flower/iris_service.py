@@ -1,12 +1,6 @@
 import numpy as np
-import pandas as pd
-import tensorflow as tf
-from keras import Sequential
-from keras.layers import Dense
 from keras.saving.save import load_model
 from sklearn import datasets
-from sklearn.preprocessing import OneHotEncoder
-import os
 
 '''
 Iris Species

@@ -55,22 +55,27 @@ class ScrapService(ScrapVO):
         self.dataframe_to_csv()  # csv파일로 저장
 
     def naver_movie_review(self):
+        '''
         if os.path.isfile(savepath):
             df = pd.read_csv(savepath)
             ls = []
             [ls.append({'rank': i+1, 'title': df.columns[i]}) for i in range(len(df.columns))]
             return ls
         else:
-            driver = webdriver.Chrome(driverpath)
-            driver.get(naver_url)
-            soup = BeautifulSoup(driver.page_source, 'html.parser')
-            all_divs = soup.find_all('div', attrs={'class', 'tit3'})
-            products = [[div.a.string for div in all_divs]]
+        '''
+        driver = webdriver.Chrome(driverpath)
+        driver.get(naver_url)
+        soup = BeautifulSoup(driver.page_source, 'html.parser')
+        all_divs = soup.find_all('div', attrs={'class', 'tit3'})
+        products = [[div.a.string for div in all_divs]]
+        print(products)
+'''
             with open(savepath, 'w', newline='', encoding=encoding) as f:
                 wr = csv.writer(f)
                 wr.writerows(products)
             driver.close()
             return products[0]
+'''
 
 if __name__ == '__main__':
     s = ScrapService()

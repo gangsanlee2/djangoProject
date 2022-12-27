@@ -1,10 +1,10 @@
-import string
+
 import random
-from random import shuffle
+
 import pandas as pd
 from sqlalchemy import create_engine
 
-from security.users.lambdas import lambda_string, lambda_k_name, lambda_number, random_number, lambda_phone, \
+from security.users.lambdas import lambda_string, lambda_k_name, lambda_phone, \
     lambda_birth, address_list, job_list, interests_list
 
 

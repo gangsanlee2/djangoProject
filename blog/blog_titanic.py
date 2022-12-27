@@ -4,15 +4,15 @@ from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
 import matplotlib.pyplot as plt
 import seaborn as sns
-from matplotlib import font_manager, rc
+#from matplotlib import font_manager, rc
 
 from context import TITANIC_DATA_CTX
 from common import Common
 from dataset import Dataset
 from lambdas import Learning
-font_path = "C:/Windows/Fonts/malgunbd.ttf"
-font = font_manager.FontProperties(fname=font_path).get_name()
-rc('font', family=font)
+#font_path = "C:/Windows/Fonts/malgunbd.ttf"
+#font = font_manager.FontProperties(fname=font_path).get_name()
+#rc('font', family=font)
 
 """
 ['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',

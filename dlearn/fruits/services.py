@@ -1,13 +1,8 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import tensorflow as tf
-import tensorflow_datasets as tfds
-from keras import layers
-from tensorflow import keras
-from keras.callbacks import ModelCheckpoint
 import os
 
-from dlearn.fruits.models import FruitsModel
+import numpy as np
+import tensorflow as tf
+from tensorflow import keras
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 

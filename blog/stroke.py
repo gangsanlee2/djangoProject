@@ -9,10 +9,10 @@ from context import STROKE_SAVE_CTX, STROKE_DATA_CTX
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 import seaborn as sns
-from matplotlib import font_manager, rc
-font_path = "C:/Windows/Fonts/malgunbd.ttf"
-font = font_manager.FontProperties(fname=font_path).get_name()
-rc('font', family=font)
+#from matplotlib import font_manager, rc
+#font_path = "C:/Windows/Fonts/malgunbd.ttf"
+#font = font_manager.FontProperties(fname=font_path).get_name()
+#rc('font', family=font)
 
 STROKE_MENUS = ["Exit", #0
                 #"Spec",#1

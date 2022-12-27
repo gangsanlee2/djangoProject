@@ -1,10 +1,9 @@
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 from matplotlib.colors import ListedColormap
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import load_iris
-import tensorflow as tf
+
+
 class Perceptron:
     def __init__(self, eta = 0.01, n_iter = 50, random_state = 1):
         self.eta = eta

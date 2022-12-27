@@ -1,7 +1,7 @@
-from tensorflow import keras
-import matplotlib.pyplot as plt
-from pathlib import Path
 import cv2 as cv
+import matplotlib.pyplot as plt
+from tensorflow import keras
+
 
 class MyFashion:
     def __init__(self):

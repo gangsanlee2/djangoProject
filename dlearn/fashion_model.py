@@ -1,13 +1,9 @@
 import os
 
 import keras.datasets.fashion_mnist
-import matplotlib.pyplot as plt
-import pandas as pd
-import tensorflow as tf
 from keras import Sequential
 from keras.layers import Dense
-from sklearn import datasets
-from sklearn.preprocessing import OneHotEncoder
+
 
 class FashionModel(object):
     global model

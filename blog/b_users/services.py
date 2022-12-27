@@ -1,14 +1,11 @@
-import pandas as pd
-from faker import Faker
-# pip install pymysql
-# pip install sqlalchemy
-import pymysql
-from sqlalchemy import create_engine
-
-
+import datetime
 import random
 import string
-import datetime
+
+import pandas as pd
+
+# pip install pymysql
+# pip install sqlalchemy
 
 lambda_string = lambda k: ''.join(random.sample(string.ascii_lowercase, k))
 random_number = lambda start, end: random.randrange(start, end)
@@ -53,7 +50,6 @@ class UserService(object):
 
     #b_user_id, email, nickname, password
     def create_users(self):
-        f = Faker()
 
         #b_user_id = [i for i in range(100)]        b_user_id는 autoincrement이므로 만들면 안됨!!!
         email = [f'{lambda_string(5)}@gmail.com' for i in range(100)]

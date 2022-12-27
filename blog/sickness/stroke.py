@@ -8,13 +8,13 @@ from imblearn.under_sampling import RandomUnderSampler
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 import seaborn as sns
-from matplotlib import font_manager, rc
+#from matplotlib import font_manager, rc
 
 from blog.sickness.context import STROKE_DATA_CTX, STROKE_SAVE_CTX
 
-font_path = "C:/Windows/Fonts/malgunbd.ttf"
-font = font_manager.FontProperties(fname=font_path).get_name()
-rc('font', family=font)
+#font_path = "C:/Windows/Fonts/malgunbd.ttf"
+#font = font_manager.FontProperties(fname=font_path).get_name()
+#rc('font', family=font)
 
 STROKE_MENUS = ["Exit", #0
                 #"Spec",#1

@@ -3,12 +3,11 @@
 경도 longtitude 0~180grade WS
 '''
 
+import folium
 import googlemaps
 import numpy as np
 import pandas as pd
 from sklearn import preprocessing
-import folium
-import json
 
 from context import CRIME_DATA_CTX, CRIME_SAVE_CTX
 

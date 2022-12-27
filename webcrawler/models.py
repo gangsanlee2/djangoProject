@@ -1,7 +1,5 @@
 # db에 저장할거면 모델(도메인) 쓰고 더이상 필요없으면 services에서 함수형으로 사용
-import urllib
 from dataclasses import dataclass
-from urllib.request import urlopen
 
 import pandas as pd
 from bs4 import BeautifulSoup

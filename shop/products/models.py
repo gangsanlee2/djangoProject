@@ -1,7 +1,6 @@
 from django.db import models
 
 from shop.categories.models import Category
-from shop.deliveries.models import Delivery
 
 
 class Product(models.Model):

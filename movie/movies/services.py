@@ -1,22 +1,21 @@
 from __future__ import print_function
-#%matplotlib inline
-import argparse
+
+# %matplotlib inline
 import os
 import random
+
+import matplotlib.pyplot as plt
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.parallel
-import torch.backends.cudnn as cudnn
 import torch.optim as optim
 import torch.utils.data
 import torchvision.datasets as dset
 import torchvision.transforms as transforms
 import torchvision.utils as vutils
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-from IPython.display import HTML
 from tqdm import tqdm
+
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 '''
@@ -380,7 +379,7 @@ cd ./~
 cd openface
 python setup.py install
 '''
-import sys
+
 import dlib  # 얼굴 검출 및 랜드마크는 라이브러리. 설치 시 권한 오류가 나타나면 관리자 권한 터미널에서 conda install -c conda-forge dlib 입력
 import cv2  # 이미지 불러오고, 변환된 이미지 저장 라이브러리
 import openface
