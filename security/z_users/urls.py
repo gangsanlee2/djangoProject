@@ -4,4 +4,5 @@ from security.z_users import views
 
 urlpatterns = [
     url(r'user-list', views.user_list),
+    url(r'login', views.login),
 ]
