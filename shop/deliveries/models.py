@@ -1,6 +1,5 @@
 from django.db import models
 
-from shop.s_users.models import SUser
 
 
 class Delivery(models.Model):
@@ -11,7 +10,6 @@ class Delivery(models.Model):
     detail_address = models.TextField()
     phone = models.TextField()
 
-    s_user = models.ForeignKey(SUser, on_delete=models.CASCADE)
 
     class Meta:
         db_table = "s_deliveries"

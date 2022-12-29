@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
-import shop.s_users.apps
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,7 +36,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "security.users.apps.UsersConfig","security.posts.apps.PostsConfig",
+    "basic",
+    "blog.b_users","blog.comments","blog.posts","blog.tags","blog.views",
+    "movie.cinemas","movie.movies","movie.showtimes","movie.theater_tickets","movie.theaters",
+    "shop.carts","shop.categories","shop.deliveries","shop.orders","shop.products",
+    "security.z_users", "security.z_posts",
     "rest_framework",
 ]
 

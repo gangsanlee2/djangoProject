@@ -19,4 +19,4 @@ def login(request):
 @api_view(['GET'])
 @parser_classes([JSONParser])
 def signup(request):
-    return JsonResponse({'users': UserService().get_users()})
+    return JsonResponse({'z_users': UserService().get_users()})
