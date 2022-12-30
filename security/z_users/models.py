@@ -1,8 +1,7 @@
-from django.db import models
-from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
+from django.db import models
 
-from django.utils import timezone
 
 class User(models.Model):
     # These fields tie to the roles!
@@ -44,3 +43,4 @@ class User(models.Model):
         db_table = "z_users"
         verbose_name = 'user'
         verbose_name_plural = 'z_users'
+

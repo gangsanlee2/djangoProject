@@ -1,22 +1,22 @@
-from django.http import JsonResponse
-from rest_framework.decorators import api_view, parser_classes
-from rest_framework.parsers import JSONParser
+from rest_framework.decorators import api_view
+from blog.b_users.repositories import BUserRepository
+from blog.b_users.serializers import BUserSerializer
 
-from blog.b_users.services import UserService
-
-
-@api_view(['Post'])
-@parser_classes([JSONParser])
-def login(request):
-    user_info = request.data
-    email = user_info['email']
-    password = user_info['password']
-    print(f'리액트에서 보낸 데이터 : {user_info}')
-    print(f'넘어온 이메일 : {email}')
-    print(f'넘어온 비밀번호 : {password}')
-    return JsonResponse({'로그인 결과': '성공!!'})
+@api_view(['GET', 'Post', 'PUT', 'PATCH', 'DELETE'])
+def b_user(request):
+    if request.method == 'POST':
+        return BUserSerializer().create(request.data)
+    elif request.method == 'PUT':
+        return BUserSerializer().update(request.data)
+    elif request.method == 'PATCH':
+        return None
+    elif request.method == 'DELETE':
+        return BUserSerializer().delete(request.data)
+    elif request.method == 'GET':
+        return BUserRepository().find_by_id(request.data)
 
 @api_view(['GET'])
-@parser_classes([JSONParser])
-def signup(request):
-    return JsonResponse({'z_users': UserService().get_users()})
+def b_user_list(request): return BUserRepository().get_all(request.data)
+
+@api_view(['Post'])
+def login_buser(request): return BUserRepository().login(request.data)

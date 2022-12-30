@@ -1,11 +1,21 @@
+from rest_framework.decorators import api_view
 
-from django.http import JsonResponse
-from rest_framework.decorators import api_view, parser_classes
-from rest_framework.parsers import JSONParser
-import datetime
+from shop.deliveries.repositories import DeliveryRepository
+from shop.deliveries.serializers import DeliverySerializer
+
+
+@api_view(['Post', 'PUT', 'PATCH', 'DELETE', 'GET'])
+def delivery(request):
+    if request.method == 'POST':
+        return DeliverySerializer().create(request.data)
+    elif request.method == 'PUT':
+        return DeliverySerializer().update(request.data)
+    elif request.method == 'PATCH':
+        return None
+    elif request.method == 'DELETE':
+        return DeliverySerializer().delete(request.data)
+    elif request.method == 'GET':
+        return DeliveryRepository().find_by_id(request.data)
 
 @api_view(['GET'])
-@parser_classes([JSONParser])
-def deliveries(request):
-    print(f'*** Deliveries View At {datetime.datetime.now()} ***  {request}')
-    return JsonResponse({'Response Test ': 'SUCCESS'})
+def delivery_list(request): return DeliveryRepository().get_all(request.data)

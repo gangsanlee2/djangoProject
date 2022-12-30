@@ -9,6 +9,8 @@ class BUser(models.Model):
 
     class Meta:
         db_table = "b_users"
+        verbose_name = 'user'
+        verbose_name_plural = 'b_users'
 
     def __str__(self):
         return f'{self.pk} {self.email} {self.nickname} {self.password}'

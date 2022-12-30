@@ -2,5 +2,6 @@ from django.urls import re_path as url
 from shop.orders import views
 
 urlpatterns = [
-    url(r'orders', views.orders)
+    url(r'order$', views.order),
+    url(r'order-list', views.order_list),
 ]

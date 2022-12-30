@@ -1,11 +1,21 @@
+from rest_framework.decorators import api_view
 
-from django.http import JsonResponse
-from rest_framework.decorators import api_view, parser_classes
-from rest_framework.parsers import JSONParser
-import datetime
+from shop.products.repositories import ProductRepository
+from shop.products.serializers import ProductSerializer
+
+
+@api_view(['Post', 'PUT', 'PATCH', 'DELETE', 'GET'])
+def product(request):
+    if request.method == 'POST':
+        return ProductSerializer().create(request.data)
+    elif request.method == 'PUT':
+        return ProductSerializer().update(request.data)
+    elif request.method == 'PATCH':
+        return None
+    elif request.method == 'DELETE':
+        return ProductSerializer().delete(request.data)
+    elif request.method == 'GET':
+        return ProductRepository().find_by_id(request.data)
 
 @api_view(['GET'])
-@parser_classes([JSONParser])
-def products(request):
-    print(f'*** Products View At {datetime.datetime.now()} ***  {request}')
-    return JsonResponse({'Response Test ': 'SUCCESS'})
+def product_list(request): return ProductRepository().get_all(request.data)

@@ -1,10 +1,20 @@
-from django.http import JsonResponse
-from rest_framework.decorators import api_view, parser_classes
-from rest_framework.parsers import JSONParser
-import datetime
+from rest_framework.decorators import api_view
 
+from movie.cinemas.repositories import CinemaRepository
+from movie.cinemas.serializers import CinemaSerializer
+
+
+@api_view(['Post', 'PUT', 'PATCH', 'DELETE', 'GET'])
+def cinema(request):
+    if request.method == 'POST':
+        return CinemaSerializer().create(request.data)
+    elif request.method == 'PUT':
+        return CinemaSerializer().update(request.data)
+    elif request.method == 'PATCH':
+        return None
+    elif request.method == 'DELETE':
+        return CinemaSerializer().delete(request.data)
+    elif request.method == 'GET':
+        return CinemaRepository().find_by_id(request.data)
 @api_view(['GET'])
-@parser_classes([JSONParser])
-def cinemas(request):
-    print(f'*** Cinemas View At {datetime.datetime.now()} ***  {request}')
-    return JsonResponse({'Response Test ': 'SUCCESS'})
+def cinema_list(request): return CinemaRepository().get_all(request.data)

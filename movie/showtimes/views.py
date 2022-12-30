@@ -1,10 +1,22 @@
-from django.http import JsonResponse
-from rest_framework.decorators import api_view, parser_classes
-from rest_framework.parsers import JSONParser
-import datetime
+from rest_framework.decorators import api_view
+
+from movie.movies.repositories import MovieRepository
+from movie.movies.serializers import MovieSerializer
+
+
+@api_view(['Post', 'PUT', 'PATCH', 'DELETE', 'GET'])
+def showtime(request):
+    if request.method == 'POST':
+        return MovieSerializer().create(request.data)
+    elif request.method == 'PUT':
+        return MovieSerializer().update(request.data)
+    elif request.method == 'PATCH':
+        return None
+    elif request.method == 'DELETE':
+        return MovieSerializer().delete(request.data)
+    elif request.method == 'GET':
+        return MovieRepository().find_by_id(request.data)
 
 @api_view(['GET'])
-@parser_classes([JSONParser])
-def showtimes(request):
-    print(f'*** Showtimes View At {datetime.datetime.now()} ***  {request}')
-    return JsonResponse({'Response Test ': 'SUCCESS'})
+def showtime_list(request): return MovieRepository().get_all(request.data)
+
